@@ -7,6 +7,5 @@ type IP struct {
 
 // Counter model
 type Counter struct {
-	ID      string `json:"id" bson:"id"`
-	Counter int32  `json:"counter" bson:"counter"`
+	Counter int64 `json:"counter" bson:"counter"`
 }

@@ -39,7 +39,7 @@ func (app *App) Initialize(MongoURI string) {
 }
 
 func (app *App) setRouters() {
-	app.Get("/", app.handleRequest(controllers.GetHomepage))
+	app.Get("/api/counter", app.handleRequest(controllers.GetHomepage))
 }
 
 // Get wraps the router for GET method

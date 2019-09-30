@@ -26,11 +26,28 @@ func GetHomepage(db *mongo.Database, res http.ResponseWriter, req *http.Request)
 		if err != nil {
 			log.Fatal(err)
 		}
-		counter, err := db.Collection("IPs").EstimatedDocumentCount(context.TODO())
-		if err != nil {
-			log.Fatal(err)
-		}
-		fmt.Println(counter)
 	}
-	respondJSON(res, http.StatusOK, ip)
+	counter, err := db.Collection("IPs").EstimatedDocumentCount(context.TODO())
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println(counter)
+	// type ResponseFormat struct {
+	// 	counter int64
+	// }
+	// response := ResponseFormat{
+	// 	counter: 10,
+	// }
+	// byteResponse, err := json.Marshal(response)
+	// if err != nil {
+	// 	log.Fatal(err)
+	// }
+	response := models.Counter{}
+	response.Counter = counter
+	fmt.Print("response: ")
+	fmt.Println(response)
+	respondJSON(res, http.StatusOK, response)
+	// res.Header().Set("Content-Type", "application/json")
+	// res.WriteHeader(http.StatusOK)
+	// res.Write([]byte(byteResponse))
 }
