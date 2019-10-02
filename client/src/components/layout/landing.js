@@ -10,7 +10,6 @@ class Landing extends Component {
     }
 
     componentDidMount() {
-        axios.defaults.headers.common['CLIENT_IP'] = "123.1.1.12";
         axios.get('/api/counter')
             .then(res => {
                 console.log(res.data.counter);
