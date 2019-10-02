@@ -3,8 +3,8 @@ package main
 import (
 	"fmt"
 
-	"github.com/anirudh06/visitor-counter-with-golang/app"
-	"github.com/anirudh06/visitor-counter-with-golang/config"
+	"github.com/anirudhganwal06/visitor-counter-with-golang/app"
+	"github.com/anirudhganwal06/visitor-counter-with-golang/config"
 )
 
 func main() {

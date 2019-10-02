@@ -8,7 +8,7 @@ import (
 
 	"go.mongodb.org/mongo-driver/mongo"
 
-	"github.com/anirudh06/visitor-counter-with-golang/app/controllers"
+	"github.com/anirudhganwal06/visitor-counter-with-golang/app/controllers"
 	"github.com/gorilla/mux"
 	"go.mongodb.org/mongo-driver/mongo/options"
 )

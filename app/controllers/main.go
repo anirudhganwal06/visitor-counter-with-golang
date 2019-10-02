@@ -7,7 +7,7 @@ import (
 	"net"
 	"net/http"
 
-	"github.com/anirudh06/visitor-counter-with-golang/app/models"
+	"github.com/anirudhganwal06/visitor-counter-with-golang/app/models"
 	"github.com/globalsign/mgo/bson"
 	"go.mongodb.org/mongo-driver/mongo"
 )
@@ -32,22 +32,9 @@ func GetHomepage(db *mongo.Database, res http.ResponseWriter, req *http.Request)
 		log.Fatal(err)
 	}
 	fmt.Println(counter)
-	// type ResponseFormat struct {
-	// 	counter int64
-	// }
-	// response := ResponseFormat{
-	// 	counter: 10,
-	// }
-	// byteResponse, err := json.Marshal(response)
-	// if err != nil {
-	// 	log.Fatal(err)
-	// }
 	response := models.Counter{}
 	response.Counter = counter
 	fmt.Print("response: ")
 	fmt.Println(response)
 	respondJSON(res, http.StatusOK, response)
-	// res.Header().Set("Content-Type", "application/json")
-	// res.WriteHeader(http.StatusOK)
-	// res.Write([]byte(byteResponse))
 }
